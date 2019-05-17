@@ -17,16 +17,81 @@
     color: #61dafb;
 }
 
+.auto-grid {
+    --auto-grid-min-size: 16rem;
+}
+
+/* selects all children of the auto-grid class */
+.auto-grid > * {
+    max-width: 100%;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* selects the siblings of the children of the auto-grid class, but not the first child */
+.auto-grid > * + * {
+    margin-top: 1rem;
+}
+.radio {
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px teal solid;
+}
+
 .box {
-    color: green;
+    display: flex;
+    margin: 15px;
 }
 
 .button {
-    color: blue;
+    color: darkblue;
+    margin-right: 15px;
 }
 
 .song-title {
-    color: red;
+    color: darkslategray;
+}
+
+.currently-playing {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e3eeee;
+    border: 2px teal solid;
+    height: 80px;
+    color: lightcoral;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.currently-playing-controls {
+    padding-top: 15px;
+}
+
+@supports (display: grid) {
+    .auto-grid {
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fill,
+            minmax(var(--auto-grid-min-size), 1fr)
+        );
+        grid-gap: 1rem;
+    }
+
+    .auto-grid > * {
+        max-width: unset;
+    }
+
+    .auto-grid > * + * {
+        margin-top: unset;
+    }
 }
 
 @keyframes App-logo-spin {

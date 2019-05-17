@@ -12,8 +12,10 @@ const App = () => {
                 <header className="App-header">
                     <h1>Context Music Player</h1>
                 </header>
-                <TrackList />
-                <PlayerControls />
+                <div className="radio">
+                    <TrackList />
+                    <PlayerControls />
+                </div>
             </div>
         </MusicPlayerProvider>
     );
