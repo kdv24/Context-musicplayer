@@ -14,16 +14,22 @@ const PlayerControls = () => {
         isPlaying,
         currentTrackName,
         togglePlay,
-        PlayPreviousTrack,
+        playPreviousTrack,
         playNextTrack,
     } = useMusicPlayer();
     return (
-        <>
-            <div>
-                <div>{currentTrackName}</div>
-                <div>
+        <div>
+            {/* <audio
+                src={`${currentTrackName}`}
+                controls
+                loop
+            > */}
+            <div className="currently-playing">
+                {currentTrackName}
+                {/* </audio> */}
+                <div className="currently-playing-controls">
                     <button
-                        onClick={PlayPreviousTrack}
+                        onClick={playPreviousTrack}
                         disabled={!currentTrackName}
                     >
                         <FontAwesomeIcon icon={faStepBackward} />
@@ -43,7 +49,7 @@ const PlayerControls = () => {
                     </button>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
