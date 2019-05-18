@@ -8,11 +8,11 @@ const MusicPlayerProvider = props => {
     const [state, setState] = useState({
         audioPlayer: new Audio(),
         tracks: [
-            { name: 'Story of My Life - One Direction', file: HappyRock },
-            { name: 'Another One Bites the Dust - Queen', file: JazzyFrenchy },
-            { name: 'Cough Syrup - Young the Giant', file: Ukulele },
+            { name: 'Happy Rock', file: HappyRock },
+            { name: 'Jazzy Frenchy', file: JazzyFrenchy },
+            { name: 'Ukulele', file: Ukulele },
         ],
-        currentTrackIndex: null,
+        currentTrackIndex: 0,
         isPlaying: false,
     });
     console.log('state: ', state);
