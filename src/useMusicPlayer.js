@@ -47,7 +47,8 @@ const useMusicPlayer = () => {
         isPlaying: state.isPlaying,
         playPreviousTrack,
         playNextTrack,
-        file: state.tracks[state.currentTrackIndex],
+        tracks: state.tracks,
+        trackIndex: state.currentTrackIndex,
     };
 };
 

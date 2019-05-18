@@ -16,13 +16,12 @@ const PlayerControls = () => {
         togglePlay,
         playPreviousTrack,
         playNextTrack,
-        file,
+        trackIndex,
+        tracks,
     } = useMusicPlayer();
-
-    console.log('file: ', file);
     return (
         <div>
-            <audio src={file} controls loop />
+            <audio src={tracks[trackIndex].file} controls loop />
             <div className="currently-playing">
                 {currentTrackName}
                 <div className="currently-playing-controls">
