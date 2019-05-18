@@ -40,7 +40,6 @@ const useMusicPlayer = () => {
     return {
         playTrack,
         togglePlay,
-        firstTrack: state.tracks[0].name,
         currentTrackName:
             state.currentTrackIndex !== null &&
             state.tracks[state.currentTrackIndex].name,
@@ -48,6 +47,7 @@ const useMusicPlayer = () => {
         isPlaying: state.isPlaying,
         playPreviousTrack,
         playNextTrack,
+        file: state.tracks[state.currentTrackIndex],
     };
 };
 
